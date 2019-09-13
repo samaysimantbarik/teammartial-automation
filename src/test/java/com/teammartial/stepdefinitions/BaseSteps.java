@@ -6,6 +6,7 @@ import com.teammartial.pages.EditProfilePage;
 import com.teammartial.pages.HomePage;
 import com.teammartial.pages.LoginPage;
 import com.teammartial.pages.ProfilePage;
+import com.teammartial.utils.TestData;
 
 import io.github.cdimascio.dotenv.Dotenv;
 
@@ -29,5 +30,8 @@ public class BaseSteps {
 	
 	@Autowired
 	EditProfilePage editProfilePage;
+	
+	@Autowired
+	TestData testdata;
 
 }

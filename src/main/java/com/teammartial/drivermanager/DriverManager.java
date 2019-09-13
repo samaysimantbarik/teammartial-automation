@@ -29,7 +29,6 @@ public class DriverManager {
 		Dotenv dotenv = Dotenv.load();
 		switch (dotenv.get("BROWSER")) {
 		case "CHROME":
-			//ChromeDriverManager.getInstance().setup();
 			System.setProperty("webdriver.chrome.driver", "./lib/chromedriver.exe");
 			driver = new ChromeDriver();
 			break;
@@ -46,13 +45,6 @@ public class DriverManager {
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Integer.parseInt(dotenv.get("TIMEOUT")), TimeUnit.SECONDS);
 		driver.manage().timeouts().pageLoadTimeout(Integer.parseInt(dotenv.get("PAGELOAD_TIMEOUT")), TimeUnit.SECONDS);
-		return driver;
-	}
-
-	
-	
-	
-	public WebDriver getDriver() {
 		return driver;
 	}
 	

@@ -24,8 +24,14 @@ public class SmokeTestSteps extends BaseSteps {
 		homePage.goToProfile();
 		System.out.println("Page Heading:"+profilePage.getPageHeading());
 		assertEquals(profilePage.getPageHeading(),"My Profile");
-		editProfilePage.editPhoneNumber();
-		editProfilePage.setAddress();
+		profilePage.clickEditProfileLink();
+		System.out.println(testdata.getAddress()+"  xx  "+testdata.getCity()+"x-x"+testdata.getState()+"-"+testdata.getZipCode());
+		editProfilePage.editPhoneNumber(testdata.getPhoneNumber());
+		editProfilePage.setAddress(testdata.getAddress());
+		editProfilePage.setCity(testdata.getCity());
+		editProfilePage.setState(testdata.getState());
+		editProfilePage.setZipCode(testdata.getZipCode());
+		editProfilePage.clickUpdateButton();
 
 	}
 

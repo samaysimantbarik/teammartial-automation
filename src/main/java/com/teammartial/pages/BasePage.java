@@ -29,7 +29,7 @@ public class BasePage {
 	protected Faker faker;
 
 	public BasePage() {
-		faker = new Faker();
+		
 		jsexec= (JavascriptExecutor) driver;
 
 	}

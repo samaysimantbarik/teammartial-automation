@@ -17,7 +17,8 @@ public class ProfilePage extends BasePage  {
 	
 	public void clickEditProfileLink() {
 		wait.until(ExpectedConditions.elementToBeClickable(editLink));
-		jsexec.executeScript("arguments[0].click();",driver.findElement(editLink));
+		//jsexec.executeScript("arguments[0].click();",driver.findElement(editLink));
+		action.click(driver.findElement(editLink)).build().perform();
 		
 	}
 }
