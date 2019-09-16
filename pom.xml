@@ -103,10 +103,27 @@
 					<version>3.8.0</version>
 					<configuration>
 						<!-- <source>1.8</source> <target>1.8</target> -->
-
 						<release>12</release>
+					</configuration>
+				</plugin>
 
 
+				<plugin>
+					<groupId>com.trivago.rta</groupId>
+					<artifactId>cluecumber-report-plugin</artifactId>
+					<version>2.2.0</version>
+					<executions>
+						<execution>
+							<id>report</id>
+							<phase>post-integration-test</phase>
+							<goals>
+								<goal>reporting</goal>
+							</goals>
+						</execution>
+					</executions>
+					<configuration>
+						<sourceJsonReportDirectory>${project.build.directory}/cucumber-report</sourceJsonReportDirectory>
+						<generatedHtmlReportDirectory>${project.build.directory}/generated-report</generatedHtmlReportDirectory>
 					</configuration>
 				</plugin>
 			</plugins>

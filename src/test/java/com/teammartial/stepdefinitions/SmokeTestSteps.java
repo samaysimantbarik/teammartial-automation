@@ -28,7 +28,6 @@ public class SmokeTestSteps extends BaseSteps {
 		System.out.println(testdata.getAddress()+"  xx  "+testdata.getCity()+"x-x"+testdata.getState()+"-"+testdata.getZipCode());
 		editProfilePage.editPhoneNumber(testdata.getPhoneNumber());
 		editProfilePage.setAddress(testdata.getAddress());
-		editProfilePage.setCity(testdata.getCity());
 		editProfilePage.setState(testdata.getState());
 		editProfilePage.setZipCode(testdata.getZipCode());
 		editProfilePage.clickUpdateButton();
@@ -38,7 +37,9 @@ public class SmokeTestSteps extends BaseSteps {
 	@Then("My details must get updated")
 	public void my_details_must_get_updated() {
 
-		System.out.println("Then 2");
+		assertEquals(profilePage.getAddress(),testdata.getAddress());
+		assertEquals(profilePage.getState(),testdata.getState());
+		assertEquals(profilePage.getZipcode(),testdata.getZipCode());
 	}
 
 }

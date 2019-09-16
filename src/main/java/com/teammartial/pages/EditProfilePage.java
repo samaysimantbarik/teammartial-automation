@@ -3,6 +3,7 @@ package com.teammartial.pages;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.springframework.stereotype.Component;
 
@@ -46,8 +47,14 @@ public class EditProfilePage extends BasePage {
     
     public void clickUpdateButton() {
     	driver.findElement(updateButton).click();
+    	try {
+    	wait.until(ExpectedConditions.alertIsPresent());
     	Alert alert=  driver.switchTo().alert();
     	alert.accept();
+    	}
+    	catch(Exception e) {
+    		
+    	}
     }
 	
 }
